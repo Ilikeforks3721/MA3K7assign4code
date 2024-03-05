@@ -1,0 +1,28 @@
+#Copy+paste this code into a JupyterLyte notebook
+import numpy as np
+rng = np.random.default_rng()
+
+heads = 11
+tails = 18
+runs = 10000
+q = 10000
+
+
+helloworld = np.arange(0, runs)
+yes = 0
+total = 0
+
+while total<runs:
+    square = 1
+    while square<q+1:
+        if square == q:
+            yes = yes+1
+        flip = rng.integers(0,2)
+        if flip == 0:
+            square = square+heads
+        if flip == 1:
+            square = square+tails
+    total = total+1
+
+prob = yes/total
+print(prob)
